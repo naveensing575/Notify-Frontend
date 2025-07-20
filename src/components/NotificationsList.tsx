@@ -38,11 +38,14 @@ const NotificationsList: React.FC<Props> = ({ refreshKey }) => {
       <h2 className="text-xl font-semibold mb-4 text-center">🔔 Notifications</h2>
 
       <div
-        className="bg-gray-900 border border-gray-700 rounded-lg p-3 max-h-80 overflow-y-auto"
+        className="bg-gray-900 border border-gray-700 rounded-lg p-3 max-h-80 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-800"
         style={{ minHeight: '150px' }}
       >
         {loading ? (
-          <div className="text-center text-sm text-gray-400">Loading notifications...</div>
+          <div className="text-center text-sm text-gray-400 flex items-center justify-center py-10">
+            <span className="w-5 h-5 border-2 border-gray-300 border-t-transparent rounded-full animate-spin mr-2"></span>
+            Loading notifications...
+          </div>
         ) : notifications.length === 0 ? (
           <div className="text-center text-sm text-gray-400">No notifications yet</div>
         ) : (
